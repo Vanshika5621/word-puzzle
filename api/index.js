@@ -121,31 +121,7 @@ app.post('/auth/verify-otp', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
 
-try {
-    const server = app.listen(PORT, () => {
-        console.log(`🚀 Server is officially live on port ${PORT}`);
-        console.log(`Press Ctrl+C to stop the server`);
-    });
-
-    server.on('error', (e) => {
-        if (e.code === 'EADDRINUSE') {
-            console.error(`❌ Error: Port ${PORT} is already in use!`);
-            console.log('Try killing the other process or use a different port in .env');
-        } else {
-            console.error('❌ Server Error:', e);
-        }
-    });
-
-    // Keep-alive loop to prevent unexpected clean exits
-    setInterval(() => {
-        // Just keeping the event loop busy
-    }, 1000 * 60 * 60);
-
-} catch (error) {
-    console.error('❌ Failed to start server:', error);
-}
 
 // 🚀 Export for Vercel
 module.exports = app;
