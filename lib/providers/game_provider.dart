@@ -32,6 +32,9 @@ class GameProvider extends ChangeNotifier {
   String? _message;
   String? get message => _message;
 
+  // Timer text getter
+  String get timerText => "00:00"; // Placeholder implementation
+
   // Compatibility with existing code
   Future<void> initialize() async {
     final prefs = await SharedPreferences.getInstance();

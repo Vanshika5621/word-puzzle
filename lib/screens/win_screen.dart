@@ -7,7 +7,7 @@ import 'home_screen.dart';
 
 // Win Screen - Celebration screen after completing puzzle
 class WinScreen extends StatefulWidget {
-  const WinScreen({Key? key}) : super(key: key);
+  const WinScreen({super.key});
 
   @override
   State<WinScreen> createState() => _WinScreenState();
