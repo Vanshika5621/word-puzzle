@@ -69,11 +69,11 @@ class _WinScreenState extends State<WinScreen> {
                         Container(
                           padding: const EdgeInsets.all(24),
                           decoration: BoxDecoration(
-                            color: AppColors.gold.withOpacity(0.2),
+                            color: AppColors.gold.withAlpha((0.2 * 255).toInt()),
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.gold.withOpacity(0.3),
+                                color: AppColors.gold.withAlpha((0.3 * 255).toInt()),
                                 blurRadius: 20,
                                 spreadRadius: 5,
                               ),
