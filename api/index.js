@@ -121,7 +121,9 @@ app.post('/auth/verify-otp', async (req, res) => {
     }
 });
 
-
+app.get('/', (req, res) => {
+    res.send('Backend is running 🚀');
+});
 
 // 🚀 Export for Vercel
 module.exports = app;
