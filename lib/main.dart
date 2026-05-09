@@ -21,7 +21,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
             primary: AppColors.accent,
             secondary: AppColors.gold,
             surface: AppColors.surface,
-            background: AppColors.background,
             error: AppColors.wrongLetter,
           ),
           appBarTheme: const AppBarTheme(
@@ -65,7 +64,7 @@ class MyApp extends StatelessWidget {
 
 // Splash Screen - App start hone pe dikhne wala screen
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -94,6 +93,7 @@ class _SplashScreenState extends State<SplashScreen>
     
     // Initialize game provider and navigate to home
     Future.delayed(const Duration(seconds: 3), () async {
+      if (!mounted) return;
       final gameProvider = Provider.of<GameProvider>(context, listen: false);
       await gameProvider.initialize();
       
@@ -128,7 +128,7 @@ class _SplashScreenState extends State<SplashScreen>
               Container(
                 padding: const EdgeInsets.all(32),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       AppColors.accent,
                       AppColors.accentLight,
@@ -137,7 +137,7 @@ class _SplashScreenState extends State<SplashScreen>
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.accent.withOpacity(0.5),
+                      color: AppColors.accent.withAlpha((0.5 * 255).toInt()),
                       blurRadius: 30,
                       spreadRadius: 5,
                     ),
