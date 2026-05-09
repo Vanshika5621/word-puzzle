@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/puzzle_model.dart';
 import '../models/cell_model.dart';
-import '../models/clue_model.dart';
 import '../models/user_stats_model.dart';
 import '../utils/puzzle_generator.dart';
 import '../utils/constants.dart';

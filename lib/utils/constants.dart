@@ -114,7 +114,7 @@ class AppTextStyles {
 
 // 🌐 Backend Configuration
 class BackendConfig {
-  static const String baseUrl = 'https://little-carrots-stare.loca.lt';
+  static const String baseUrl = 'https://word-puzzle-3b9i.vercel.app';
 }
 
 // 💾 Storage Keys

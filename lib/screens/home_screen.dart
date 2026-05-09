@@ -689,7 +689,6 @@ class HomeScreen extends StatelessWidget {
                 price: '100 coins',
                 onTap: () {
                   provider.userStats?.buyHints(10, 100);
-                  provider.notifyListeners();
                   Navigator.pop(context);
                 },
               ),
@@ -701,7 +700,6 @@ class HomeScreen extends StatelessWidget {
                 discount: '20% OFF',
                 onTap: () {
                   provider.userStats?.buyHints(50, 400);
-                  provider.notifyListeners();
                   Navigator.pop(context);
                 },
               ),
@@ -713,7 +711,6 @@ class HomeScreen extends StatelessWidget {
                 discount: '30% OFF',
                 onTap: () {
                   provider.userStats?.buyHints(100, 700);
-                  provider.notifyListeners();
                   Navigator.pop(context);
                 },
               ),
