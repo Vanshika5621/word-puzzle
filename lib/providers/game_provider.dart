@@ -57,7 +57,20 @@ class GameProvider extends ChangeNotifier {
   }
 
   void _generateTileTray() {
-    _tileTray = ["E", "L", "U", "T", "P", "Q", "A", "I", "S", "Y"];
+    _tileTray = [];
+    if (_currentPuzzle != null) {
+      for (var row in _currentPuzzle!.grid) {
+        for (var cell in row) {
+          if (cell.correctLetter != null) {
+            _tileTray.add(cell.correctLetter!);
+          }
+        }
+      }
+      // Add a few random extra letters to make it slightly challenging
+      _tileTray.addAll(["P", "R", "O"]);
+    } else {
+      _tileTray = ["E", "L", "U", "T", "P", "Q", "A", "I", "S", "Y"];
+    }
     _tileTray.shuffle();
     notifyListeners();
   }
